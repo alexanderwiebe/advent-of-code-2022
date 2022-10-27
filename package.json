@@ -4,7 +4,7 @@
   "description": "advent of code 2022",
   "main": "index.js",
   "scripts": {
-    "build": "tsc",
+    "build": "tsc --watch",
     "exec": "node dist/main.js",
     "test": "jest"
   },
