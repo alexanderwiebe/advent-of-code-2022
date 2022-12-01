@@ -1,5 +1,5 @@
-import { day01p1 } from './day01/day01p1';
+import { day01p2 } from './day01/day01p2';
 
 // just a runner of the days specific code
 
-day01p1();
+console.log(day01p2());
