@@ -1,6 +1,6 @@
 import { input } from './data';
 
-export function day01p1() {
+export function day02p1() {
   let example = [
     ['A', 'Y'],
     ['B', 'X'],

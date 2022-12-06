@@ -1,6 +1,6 @@
 import { input } from './data';
 
-export function day01p2(): number {
+export function day02p2(): number {
   let example = [[1000, 2000, 3000], [4000], [5000, 6000], [7000, 8000, 9000], [10000]];
 
   /* Part 1 */
