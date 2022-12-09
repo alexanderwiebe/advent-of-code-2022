@@ -1,0 +1,10 @@
+{
+    "recommendations": [
+        "cs50.vscode-presentation-mode",
+        "ms-vsliveshare.vsliveshare-pack",
+        "esbenp.prettier-vscode",
+        "wallabyjs.wallaby-vscode",
+        "streetsidesoftware.code-spell-checker",
+        "dbaeumer.vscode-eslint"
+    ]
+}
