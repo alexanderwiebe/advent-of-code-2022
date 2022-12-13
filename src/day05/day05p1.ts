@@ -9,7 +9,7 @@ export interface Move {
 export type Stacks = Record<number, string[]>;
 
 export function readInput(filename: string): string[][] {
-    const lines = fs.readFileSync(filename).toString().split("\n\n");
+    const lines = fs.readFileSync(filename).toString().split("\n");
     const dividerPosition = lines.indexOf('');
     return [
         lines.slice(0, dividerPosition),
