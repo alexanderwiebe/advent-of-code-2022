@@ -1,5 +1,6 @@
 // just a runner of the days specific code
 
-import { day05p2 } from './day05/day05p2';
+import { input } from './day07/data';
+import { day07p1 } from './day07/day07p1';
 
-console.log(day05p2());
+console.log(day07p1(input.slice(1, input.length)));
