@@ -1,3 +1,5 @@
+import { input } from './data';
+
 export function day08p2(example: number[][]): number {
   function rowScore(row: number[], index: number, treeHeight: number) {
     let left = row.slice(0, index);
@@ -30,6 +32,7 @@ export function day08p2(example: number[][]): number {
   function colScore(grid: number[][], column: number, row: number, treeHeight: number): number {
     let top = [];
     let bottom = [];
+
     for (let c = 0; c < grid.length; c++) {
       if (c < column) {
         top.push(grid[c][row]);
@@ -38,10 +41,28 @@ export function day08p2(example: number[][]): number {
         bottom.push(grid[c][row]);
       }
     }
-    let topVisible = Math.max(...top) < treeHeight;
-    let bottomVisible = Math.max(...bottom) < treeHeight;
-    return 0;
-    // return topVisible || bottomVisible;
+
+    let topVisible = 0;
+    if (top.length) {
+      const nextBiggest = top.reverse().findIndex((tree) => tree >= treeHeight);
+      if (nextBiggest == -1) {
+        topVisible = top.length;
+      } else {
+        topVisible = nextBiggest + 1;
+      }
+    }
+    console.log(topVisible);
+
+    let bottomVisible = 0;
+    if (bottom.length) {
+      const nextBiggest = bottom.findIndex((tree) => tree >= treeHeight);
+      if (nextBiggest == -1) {
+        bottomVisible = bottom.length;
+      } else {
+        bottomVisible = nextBiggest + 1;
+      }
+    }
+    return topVisible * bottomVisible;
   }
 
   let treeScore = [];
@@ -50,7 +71,9 @@ export function day08p2(example: number[][]): number {
       treeScore.push(rowScore(example[y], x, example[y][x]) * colScore(example, y, x, example[y][x]));
     }
   }
-
+  //   let x = 1;
+  //   let y = 2;
+  //   treeScore.push(rowScore(example[y], x, example[y][x]) * colScore(example, y, x, example[y][x]));
   return Math.max(...treeScore);
 }
 
@@ -61,4 +84,4 @@ let example: number[][] = [
   [3, 3, 5, 4, 9],
   [3, 5, 3, 9, 0],
 ];
-console.log(day08p2(example));
+console.log(day08p2(input));
